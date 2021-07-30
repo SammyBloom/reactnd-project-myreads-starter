@@ -10,7 +10,7 @@ class ListBook extends Component {
             <div className="list-books">
 
                 <div className="list-books-title">
-                    <h1>MyReads</h1>
+                    <h1>MY READS</h1>
                 </div>
 
                 <div className="list-books-content">
@@ -49,6 +49,10 @@ class ListBook extends Component {
                                 </ol>
                             </div>
                         </div>
+
+                        <div className="open-search">
+                            <Link to='/search'>Add a book</Link>
+                         </div>
 
                     </div>
 
