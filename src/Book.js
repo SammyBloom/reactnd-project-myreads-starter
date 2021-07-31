@@ -3,12 +3,6 @@ import * as BooksAPI from "./BooksAPI"
 
 class Book extends Component {
 
-    // Show all books
-    showAllBooks = () => {
-        BooksAPI.getAll().then((books) => {
-          this.setState({books})
-        })
-    }
 
     // Update Shelf
     updateShelf = (book, currentShelf) => {

@@ -22,7 +22,7 @@ class ListBook extends Component {
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
                                     {books.filter((book) => {return book.shelf === 'currentlyReading'}).map((book) => (
-                                        <Book thisBook={book} bookShelf={book.shelf} key={book.toString()}/>
+                                        <Book thisBook={book} bookShelf={book.shelf} key={book.id}/>
                                     ))}
                                 </ol>
                             </div>
@@ -33,7 +33,7 @@ class ListBook extends Component {
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
                                     {books.filter((book) => {return book.shelf === 'wantToRead'}).map((book) => (
-                                        <Book thisBook={book} bookShelf={book.shelf}  key={book.toString()}/>
+                                        <Book thisBook={book} bookShelf={book.shelf}  key={book.id}/>
                                     ))}
                                 </ol>
                             </div>
@@ -44,7 +44,7 @@ class ListBook extends Component {
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
                                     {books.filter((book) => {return book.shelf === 'read'}).map((book) => (
-                                        <Book thisBook={book} bookShelf={book.shelf}  key={book.toString()}/>
+                                        <Book thisBook={book} bookShelf={book.shelf}  key={book.id}/>
                                     ))}
                                 </ol>
                             </div>
@@ -52,7 +52,7 @@ class ListBook extends Component {
                     </div>
                 </div>
                 <div className="open-search">
-                    <Link to='/search'>Add a book</Link>
+                    <Link to='/search' key={"look"}>Add a book</Link>
                 </div>
             </div>
         )
