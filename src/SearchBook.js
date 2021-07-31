@@ -12,14 +12,14 @@ class SearchBook extends Component {
         shelvedBooks: []
     }
 
-    // Save The Books that were asigned to a shelf
-    showAll = () => {
+    // Save Books Assigned to a Shelf
+    showAllBooks = () => {
         BooksAPI.getAll().then((shelvedBooks) => {
             this.setState({shelvedBooks})
         })
     }
     componentWillMount() {
-        this.showAll();
+        this.showAllBooks();
     }
 
 
@@ -40,7 +40,9 @@ class SearchBook extends Component {
                             if(shelvedBook.id === book.id) {
                                 book.shelf = shelvedBook.shelf
                             }
-                        })
+                            return shelvedBook;
+                        }) 
+                        return book;
                     })
                     this.setState({books: result})
                 }
