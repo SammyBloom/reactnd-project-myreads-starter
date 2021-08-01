@@ -3,6 +3,10 @@ import * as BooksAPI from "./BooksAPI"
 
 class Book extends Component {
 
+    // Return All Books
+    showAllBooks = () => {
+        BooksAPI.getAll()
+    }
 
     // Update Shelf
     updateShelf = (book, currentShelf) => {
@@ -20,7 +24,7 @@ class Book extends Component {
                 <div className="book">
                     <div className="book-top">
                         <div 
-                            className="book-cover" 
+                            className="book-cover"
                             style={{ 
                                 width: 130, 
                                 height: 190, 
