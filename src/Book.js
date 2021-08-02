@@ -1,23 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 import * as BooksAPI from "./BooksAPI"
 
-class Book extends Component {
-
+function Book(props) {
+    
     // Return All Books
-    showAllBooks = () => {
+    const showAllBooks = () => {
         BooksAPI.getAll()
     }
 
     // Update Shelf
-    updateShelf = (book, currentShelf) => {
+    const updateShelf = (book, currentShelf) => {
         BooksAPI.update(book, currentShelf)
-        .then(this.showAllBooks())
+        .then(showAllBooks())
     }
 
-
-    render() {
-
-        const {thisBook, bookShelf} = this.props 
+    const {thisBook, bookShelf} = props 
 
         return(
             <li>
@@ -35,7 +32,7 @@ class Book extends Component {
                                 
                         </div>
                         <div className="book-shelf-changer">
-                            <select onChange={(e) => {this.updateShelf(thisBook, e.target.value)}}
+                            <select onChange={(e) => {updateShelf(thisBook, e.target.value)}}
                                     value={bookShelf}>
                                 <option value="move" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
@@ -50,7 +47,6 @@ class Book extends Component {
                 </div>
             </li>
         )
-    }
 }
 
 export default Book

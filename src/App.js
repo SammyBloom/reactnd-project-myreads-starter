@@ -23,7 +23,6 @@ class BooksApp extends Component {
     this.showAllBooks()
   }
 
-
   render() {
     return (
       <div className="app">
