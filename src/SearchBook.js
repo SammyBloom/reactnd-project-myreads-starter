@@ -78,7 +78,7 @@ class SearchBook extends Component {
                     <h2>{query !== '' ? `${books.length} Books Found!` : ``}</h2>
                     <ol className="books-grid">
                         {books.map((book) => (
-                            <Book thisBook={book} bookShelf={book.shelf}/>
+                            <Book thisBook={book} bookShelf={book.shelf} key={book.id}/>
                         ))}
                     </ol>
 
